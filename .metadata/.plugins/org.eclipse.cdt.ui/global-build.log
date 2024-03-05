@@ -1,0 +1,25 @@
+19:26:58 **** Incremental Build of configuration Debug for project 001-helloworld ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "001-helloworld.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/krayt/Projects/embedded_practice/001-helloworld/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001-helloworld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001-helloworld.elf
+ 
+arm-none-eabi-size  001-helloworld.elf 
+arm-none-eabi-objdump -h -S 001-helloworld.elf  > "001-helloworld.list"
+   text	   data	    bss	    dec	    hex	filename
+   3452	    100	   1900	   5452	   154c	001-helloworld.elf
+Finished building: default.size.stdout
+ 
+Finished building: 001-helloworld.list
+ 
+19:27:43 **** Incremental Build of configuration Debug for project 001-helloworld ****
+make -j8 all 
+arm-none-eabi-size  001-helloworld.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3452	    100	   1900	   5452	   154c	001-helloworld.elf
+Finished building: default.size.stdout
+ 
